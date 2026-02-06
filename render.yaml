@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: n8n-automation
+    env: docker
+    plan: free # Puedes cambiar a 'starter' o 'professional' luego
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: N8N_PROTOCOL
+        value: https
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: WEBHOOK_URL
+        value: https://n8n-automation.onrender.com # ACTUALIZA con tu nombre real
+      - key: N8N_ENCRYPTION_KEY
+        generateValue: true
